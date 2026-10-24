@@ -1,0 +1,279 @@
+.ui-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.ui-button svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.ui-button:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px var(--ring-soft);
+}
+
+.ui-button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.ui-button--sm {
+  height: 32px;
+  padding: 0 12px;
+  gap: 6px;
+}
+
+.ui-button--default {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.ui-button--default:hover {
+  background: color-mix(in oklch, var(--primary) 90%, transparent);
+}
+
+.ui-button--outline {
+  background: var(--input-bg);
+  border-color: var(--input);
+  color: var(--foreground);
+  box-shadow: var(--shadow-xs);
+}
+
+.ui-button--outline:hover {
+  background: var(--accent);
+}
+
+.ui-button--ghost {
+  background: transparent;
+  color: var(--foreground);
+}
+
+.ui-button--ghost:hover {
+  background: var(--accent);
+}
+
+.ui-input,
+.ui-select select {
+  box-sizing: border-box;
+  height: 36px;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 12px;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-md);
+  background: var(--input-bg);
+  color: var(--foreground);
+  font: inherit;
+  font-size: 14px;
+  box-shadow: var(--shadow-xs);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.ui-input::placeholder {
+  color: var(--muted-foreground);
+}
+
+.ui-input:focus-visible,
+.ui-select select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px var(--ring-soft);
+}
+
+.ui-input:disabled,
+.ui-select select:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Date inputs: match the text colour and tint the native picker icon. */
+.ui-input[type="date"] {
+  min-width: 140px;
+}
+
+.ui-input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.ui-select {
+  position: relative;
+  min-width: 0;
+}
+
+.ui-select select {
+  appearance: none;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.ui-select select:hover {
+  background: var(--input-hover);
+}
+
+.ui-select option {
+  background: Canvas;
+  color: CanvasText;
+}
+
+.ui-select__icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  color: var(--muted-foreground);
+  pointer-events: none;
+}
+
+.ui-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ui-checkbox__box {
+  position: relative;
+  display: inline-grid;
+  width: 16px;
+  height: 16px;
+}
+
+.ui-checkbox__box input {
+  appearance: none;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--input);
+  border-radius: 4px;
+  background: var(--input-bg);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+  transition: box-shadow 0.15s, background-color 0.15s;
+  outline: none;
+}
+
+.ui-checkbox__box input:checked {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.ui-checkbox__box input:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px var(--ring-soft);
+}
+
+.ui-checkbox__icon {
+  position: absolute;
+  inset: 1px;
+  width: 14px;
+  height: 14px;
+  color: var(--primary-foreground);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ui-checkbox__box input:checked + .ui-checkbox__icon {
+  opacity: 1;
+}
+
+.ui-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.ui-label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 2px 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ui-badge--default {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.ui-badge--secondary {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.ui-badge--outline {
+  border-color: var(--border);
+  color: var(--foreground);
+}
+
+.ui-tabs {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 3px;
+  box-sizing: border-box;
+  border-radius: var(--radius-lg);
+  background: var(--secondary);
+}
+
+.ui-tabs__trigger {
+  height: 100%;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--muted-foreground);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.ui-tabs__trigger:hover {
+  color: var(--foreground);
+}
+
+.ui-tabs__trigger[aria-selected="true"] {
+  background: var(--tab-active);
+  color: var(--foreground);
+  box-shadow: var(--shadow-xs);
+}
+
+.ui-tabs__trigger:focus-visible {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px var(--ring-soft);
+}

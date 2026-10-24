@@ -1,0 +1,15 @@
+# Build and run:  docker compose --env-file .env.local up --build
+# Then open http://localhost:8080 (it must be localhost: NewsAPI's free plan rejects other origins).
+services:
+  web:
+    build:
+      context: .
+      args:
+        # Read from the file passed with --env-file. A missing key only prints a warning here;
+        # the app then shows an error for that source and the others keep working.
+        VITE_NEWSAPI_KEY: ${VITE_NEWSAPI_KEY}
+        VITE_GUARDIAN_KEY: ${VITE_GUARDIAN_KEY}
+        VITE_NYT_KEY: ${VITE_NYT_KEY}
+    ports:
+      - "8080:80"
+    restart: unless-stopped

@@ -1,0 +1,13 @@
+# Rebuilt inside the image
+node_modules
+dist
+
+# Keys reach the build only as build arguments, never as copied files
+.env
+.env.*
+!.env.example
+
+.git
+.claude
+*.log
+.DS_Store
